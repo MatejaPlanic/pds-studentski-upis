@@ -13,7 +13,7 @@ spring:
         - id: student-service
           uri: lb://student-service
           predicates:
-            - Path=/api/students/**
+            - Path=/api/students,/api/students/**
         - id: enrollment-service
           uri: lb://enrollment-service
           predicates:
