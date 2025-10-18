@@ -6,18 +6,19 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: student-service
-          uri: lb://student-service
-          predicates:
-            - Path=/api/students,/api/students/**
-        - id: enrollment-service
-          uri: lb://enrollment-service
-          predicates:
-            - Path=/api/enrollments/**
+      mvc:
+        discovery:
+          locator:
+            enabled: true
+        routes:
+          - id: student-service
+            uri: lb://student-service
+            predicates:
+              - Path=/api/students/**
+          - id: enrollment-service
+            uri: lb://enrollment-service
+            predicates:
+              - Path=/api/enrollments/**
 eureka:
   client:
     service-url:
