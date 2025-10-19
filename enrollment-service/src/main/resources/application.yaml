@@ -19,7 +19,7 @@ spring:
   cloud:
     openfeign:
       circuitbreaker:
-        enabled: false   # ← koristimo anotacije u servisu, ne Feign CB
+        enabled: false  
 
 eureka:
   client:
